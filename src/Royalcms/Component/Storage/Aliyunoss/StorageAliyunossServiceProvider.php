@@ -21,11 +21,11 @@ class StorageAliyunossServiceProvider extends ServiceProvider implements Deferra
          * @param  array  $config
          * @return \Royalcms\Component\Contracts\Filesystem\Filesystem
          */
-        $this->royalcms['storage']->extend('aliyunoss', function (array $config) {
+        $this->royalcms['storage']->extend('aliyunoss', function ($royalcms, array $config) {
             $ossConfig = array_only($config, array('key', 'secret', 'bucket', 'server', 'server_internal', 'is_internal', 'url'));
 
-            return $this->royalcms['storage']->adapt(
-                $this->royalcms['storage']->createFilesystem(
+            return $royalcms['storage']->adapt(
+                $royalcms['storage']->createFilesystem(
                     new Aliyunoss($ossConfig),
                     $ossConfig
                 )
