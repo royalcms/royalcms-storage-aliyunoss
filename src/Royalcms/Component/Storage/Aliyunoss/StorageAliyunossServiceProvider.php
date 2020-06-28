@@ -3,6 +3,7 @@
 namespace Royalcms\Component\Storage\Aliyunoss;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
+use Royalcms\Component\Storage\StorageServiceProvider;
 use Royalcms\Component\Support\ServiceProvider;
 
 class StorageAliyunossServiceProvider extends ServiceProvider implements DeferrableProvider
@@ -34,13 +35,23 @@ class StorageAliyunossServiceProvider extends ServiceProvider implements Deferra
 	}
 
     /**
+     * Get the events that trigger this service provider to register.
+     *
+     * @return array
+     */
+    public function when()
+    {
+        return [StorageServiceProvider::class];
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return array
      */
     public function provides()
     {
-        return ['storage'];
+        return [];
     }
 
 }
