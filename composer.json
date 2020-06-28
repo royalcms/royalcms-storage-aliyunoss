@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Royalcms\\Component\\Storage\\Aliyunoss\\": "Royalcms/Component/Storage/Aliyunoss"
+            "Royalcms\\Component\\Storage\\Aliyunoss\\": "src/Royalcms/Component/Storage/Aliyunoss"
         }
     },
     "extra": {
